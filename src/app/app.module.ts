@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 
 
-import {YouTubePlayerModule} from '@angular/youtube-player';
+import {YouTubePlayerModule} from '@angular/youtube-player'; //Aqui esta el api
 import { RouterModule, Routes } from '@angular/router';
 import { PaginaCasaComponent } from './pagina-casa/pagina-casa.component';
 import { RegistroCitaComponent } from './registro-cita/registro-cita.component';

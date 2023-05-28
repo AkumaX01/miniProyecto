@@ -14,7 +14,8 @@ export class MostrarCitaComponent {
    this.fechaMostrar=event; 
 
   }
- 
+  datos=1;
+
   fechaMostrar= JSON.parse(localStorage.getItem('fecha')!);
 
   horaLocal= JSON.parse(localStorage.getItem('hora')!);
