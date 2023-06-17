@@ -1,0 +1,22 @@
+
+<h2>Login de usuario con telefono</h2>
+<form [formGroup]="phoneNumber" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Nombre: </label>
+        <input type="text" name="name" id="name" class="form-control" formControlName="name">
+        <label class="form-label">Telefono</label>
+        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+    </div>
+    <div id="phoneCaptcha"></div>
+    <input type="submit" value="Enviar">
+</form>
+
+<div *ngIf="isVerifyEnter">
+    <form [formGroup]="verifyEnter" (ngSubmit)="onVerifyEnter()">
+        <div class="mb-3">
+            <label class="form-label">Codigo de verificacion</label>
+            <input type="verifyEnter" name="verifyEnter" id="verifyEnter" class="form-control" formControlName="verifyEnter">
+        </div>
+        <input type="submit" value="Ingresar">
+    </form>
+</div>

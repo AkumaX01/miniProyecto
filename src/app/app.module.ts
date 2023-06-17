@@ -16,7 +16,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
@@ -24,6 +24,14 @@ import { CardModule } from 'primeng/card';
 import { MessagesModule } from 'primeng/messages';
 import { MostrarCitaComponent } from './mostrar-cita/mostrar-cita.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { LoginComponent } from './login/login.component';
+import { LoginPhoneComponent } from './login-phone/login-phone.component';
+import { RegisterComponent } from './register/register.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -31,7 +39,11 @@ const appRoutes:Routes=[
   {path:'casas', component:PaginaCasaComponent},
   {path:'cita', component:RegistroCitaComponent},
   {path:'tabla', component:MostrarCitaComponent},
-  {path:'formulario', component:FormularioComponent}
+  {path:'formulario', component:FormularioComponent},
+  {path:'login', component: LoginComponent},
+  {path:'login-phone', component: LoginPhoneComponent},
+  {path:'register', component: RegisterComponent}
+
 
 ];
 
@@ -44,7 +56,10 @@ const appRoutes:Routes=[
     PaginaCasaComponent,
     RegistroCitaComponent,
     MostrarCitaComponent,
-    FormularioComponent
+    FormularioComponent,
+    LoginComponent,
+    LoginPhoneComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +74,11 @@ const appRoutes:Routes=[
     RatingModule,
     CardModule,
     MessagesModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
     
   ],
   providers: [],

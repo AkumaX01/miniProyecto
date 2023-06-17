@@ -1,0 +1,15 @@
+<h2>Login de usuario</h2>
+<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <input type="submit" value="Enviar">
+</form><br><br>
+<button class="btn btn-info" (click)="onClick()">Login With Google</button><br><br>
+<a href="/login-phone">Ingresa con Numero Telefonico!</a><br><br>
+<a href="/register">No tienes cuenta? Registrate!</a>
