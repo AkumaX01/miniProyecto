@@ -53,7 +53,10 @@
             <p>la hora que seleccionaste {{date}}</p>
             <p-dropdown [options]="hora" [(ngModel)]="horaSeleccionada"></p-dropdown>
             <p>la hora que seleccionaste {{horaSeleccionada}}</p>
-            <a class="btn btn-primary"  role="button" (click)="agregarDatosReservacion()" (click)="addMessages()">Reservar</a>
+            
+            <a *ngIf="banderaLogeado" class="btn btn-primary"  role="button" (click)="agregarDatosReservacion()" (click)="addMessages()">Reservar</a>
+            <a *ngIf="!banderaLogeado" class="btn btn-primary"  role="button" href="/login">Reservar</a>
+
             <div class="card">
               <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
             </div>

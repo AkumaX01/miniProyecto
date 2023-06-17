@@ -1,6 +1,9 @@
 import { Component,EventEmitter,Output,OnInit,Input} from '@angular/core';
 import { Message } from 'primeng/api';
-  
+import { Auth, authState, getAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';  
 
 @Component({
   selector: 'app-registro-cita',
@@ -15,6 +18,13 @@ export class RegistroCitaComponent {
   messages: Message[];
   messages2: Message[];
   messages3: Message[];
+
+  user$!: Observable<any>;
+  banderaLogeado=false;
+  email="";
+
+
+  
 
     addMessages() {
         this.messages = [
@@ -58,7 +68,9 @@ export class RegistroCitaComponent {
   public fechaArray2: String[]=[];
 
   public horario: string[]=[];
-  constructor(){
+  constructor(private auth: Auth,
+    private userService: UserService,
+    private router: Router){
     this.messages = [];
     this.messages2 = [];
     this.messages3 = [];
@@ -129,7 +141,25 @@ export class RegistroCitaComponent {
     ];
     }
  }
+    get userState$(){
+      return authState(this.auth);
+    }
 
+    ngOnInit(): void {
+      this.auth = getAuth();
+      this.user$ = this.userState$;
+      this.user$.subscribe(user => {
+        if (user) {
+          
+          this.email = user.email;
+          if(this.email!=""){
+            this.banderaLogeado=true;
+          }
+          
+          //console.log('Email:', email);
+        }
+      });
+    }
   
   
 }
