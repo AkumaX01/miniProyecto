@@ -35,6 +35,7 @@ import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DomseguroPipe } from './domseguro.pipe';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -64,7 +65,8 @@ const appRoutes:Routes=[
     LoginPhoneComponent,
     RegisterComponent,
     QrgenerateComponent,
-    ScreenReaderComponent
+    ScreenReaderComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,
