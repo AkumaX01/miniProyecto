@@ -1,0 +1,16 @@
+.button-group .list-group-item {
+    width: 100%;
+  }
+  
+  .button-group .list-group-item button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .button-group .list-group-item:last-child button {
+    margin-bottom: 0;
+  }
+  

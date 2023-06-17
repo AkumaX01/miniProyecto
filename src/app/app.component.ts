@@ -8,6 +8,7 @@ import { Component,Input } from '@angular/core';
 export class AppComponent {
   title = 'my-first-project';
   nombre:string="Hector";
-  
+  imagePath: string = 'assets/img/accesibilidadicono.png';
+
 
 }

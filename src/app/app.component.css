@@ -1,0 +1,7 @@
+.sticky-image {
+    position: fixed;
+    top: 450px; /* Adjust the top position according to your needs */
+    left: 0px; /* Adjust the left position according to your needs */
+    width: 50px; /* Adjust the width of the image */
+    z-index: 9999; /* Ensure the image stays on top of other elements */
+  }

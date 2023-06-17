@@ -91,7 +91,7 @@ export class ScreenReaderComponent {
         this.renderer.setStyle(screenReaderContent, 'background-color', '');
         this.isDarkMode = false;
       } else {
-        this.renderer.setStyle(screenReaderContent, 'background-color', 'darkgray');
+        this.renderer.setStyle(screenReaderContent, 'background-color', 'black');
         this.isDarkMode = true;
       }
     }

@@ -62,7 +62,7 @@ const appRoutes:Routes=[
     LoginComponent,
     LoginPhoneComponent,
     RegisterComponent,
-    QrgenerateComponent
+    QrgenerateComponent,
     ScreenReaderComponent
   ],
   imports: [
