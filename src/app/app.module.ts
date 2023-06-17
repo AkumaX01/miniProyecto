@@ -24,6 +24,7 @@ import { CardModule } from 'primeng/card';
 import { MessagesModule } from 'primeng/messages';
 import { MostrarCitaComponent } from './mostrar-cita/mostrar-cita.component';
 import { FormularioComponent } from './formulario/formulario.component';
+<<<<<<< Updated upstream
 import { LoginComponent } from './login/login.component';
 import { LoginPhoneComponent } from './login-phone/login-phone.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,6 +34,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
+=======
+import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
+>>>>>>> Stashed changes
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -58,10 +62,14 @@ const appRoutes:Routes=[
     RegistroCitaComponent,
     MostrarCitaComponent,
     FormularioComponent,
+<<<<<<< Updated upstream
     LoginComponent,
     LoginPhoneComponent,
     RegisterComponent,
     QrgenerateComponent
+=======
+    ScreenReaderComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
