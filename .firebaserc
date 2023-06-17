@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "gdi-rentacasas"
+    "default": "autentucador-uaa"
+  },
+  "targets": {
+    "autentucador-uaa": {
+      "hosting": {
+        "my-first-project": [
+          "avanceuaa"
+        ]
+      }
+    }
   }
 }
