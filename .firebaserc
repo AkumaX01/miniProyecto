@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "autentucador-uaa"
+    "default": "hosting-miniproject",
+    "miniproject": "hosting-miniproject"
   },
   "targets": {
     "autentucador-uaa": {
@@ -10,5 +11,6 @@
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
