@@ -34,6 +34,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -77,6 +78,7 @@ const appRoutes:Routes=[
     DropdownModule,
     RatingModule,
     CardModule,
+    HttpClientModule,
     MessagesModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,

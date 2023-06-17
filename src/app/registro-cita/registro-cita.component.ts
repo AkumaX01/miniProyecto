@@ -1,5 +1,6 @@
 import { Component,EventEmitter,Output,OnInit,Input} from '@angular/core';
 import { Message } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
   
 
 @Component({
@@ -9,7 +10,7 @@ import { Message } from 'primeng/api';
 })
 export class RegistroCitaComponent {
   @Output() cambio=new EventEmitter<String[]>(); /////uso de output
-
+  
 
   fechaObtenida='';
   messages: Message[];
@@ -20,6 +21,13 @@ export class RegistroCitaComponent {
         this.messages = [
             { severity: 'success', summary: 'Reservado:', detail: 'El registro ha sido exitoso' },
         ];
+        // Obtén los valores del formulario
+  const asunto = 'Reservación de casa';
+  const correo = 'neroxpilgrim@gmail.com'; // Reemplaza con la dirección de correo a la que se enviará el mensaje
+  const descripcion = `Fecha: ${this.auxF}, Hora: ${this.horaSeleccionada}`;
+
+  // Envía el correo al servidor Node.js
+  this.enviarCorreo(asunto, correo, descripcion);
     }
     addMessages2() {
       if(this.calificacion<=3){
@@ -58,7 +66,7 @@ export class RegistroCitaComponent {
   public fechaArray2: String[]=[];
 
   public horario: string[]=[];
-  constructor(){
+  constructor(private http: HttpClient){
     this.messages = [];
     this.messages2 = [];
     this.messages3 = [];
@@ -80,6 +88,28 @@ export class RegistroCitaComponent {
     }
     
   }
+  enviarCorreo(asunto: string, correo: string, descripcion: string) {
+    const url = 'http://localhost:3000/enviar-correo'; 
+  
+    const data = {
+      asunto: asunto,
+      correo: correo,
+      descripcion: descripcion
+    };
+  
+    this.http.post(url, data).subscribe(
+      (response) => {
+        console.log('Correo enviado correctamente');
+      },
+      (error) => {
+        console.log('Error al enviar el correo:', error);
+      }
+    );
+  }
+  
+  
+
+
   agregarDatosReservacion(){// Se agregan los datos al localStorage
     this.fechaArray.push(this.date);// se agrega al array con todas las fechas
     this.horaLocal.push(this.horaSeleccionada);//se agrega al array con todas las horas

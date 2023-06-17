@@ -1,8 +1,10 @@
 .button-group .list-group-item {
     width: 100%;
+    
   }
   
   .button-group .list-group-item button {
+    
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
