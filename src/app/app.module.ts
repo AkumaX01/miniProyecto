@@ -31,12 +31,9 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-<<<<<<< HEAD
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 import { GraficasComponent } from './graficas/graficas.component';
-=======
 import { ServiceWorkerModule } from '@angular/service-worker';
->>>>>>> origin/emys
 
 
 //Las rutas simples
