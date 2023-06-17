@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class FormularioComponent implements OnInit {
   contactanos:any;
+  mensaje:string="";
+  palabrasOB:string[]=["gay","tonto","feo","puto"];
   constructor(private formBuilder: FormBuilder) { 
     this.messages = [];
   }
@@ -23,43 +25,49 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contactanos = this.formBuilder.group({
-      fname: new FormControl('',[Validators.required]),
+    this.contactanos = new FormGroup({
+      fname: new FormControl('',[Validators.required,Validators.minLength(4)]),
       lname: new FormControl('',[Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      phone: new FormControl('',[Validators.required,Validators.minLength(9)]),
-      message: new FormControl('',[Validators.required])
+      email: new FormControl('', [Validators.required,Validators.pattern('^[A-Za-z0-9._%+-]+@[A-Za-z0-9._%+-]{2,}[.][A-Za-z]{2,}$')]),
+      phone: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+      message: new FormControl('',[Validators.required,this.palabrasOb(this.mensaje)])
     });
   }
-  
-  // palabrasOb(limit: string[]) {
-  //   return (control: AbstractControl) => {
+  submit() {
+    if (this.contactanos.valid) {
+      console.log(this.contactanos.value)
+      this.addMessages();
+    }
+    else{
+      alert("Llena todos los campos")
+    }
+  }
+  palabrasOb(limit: string) {
+    return (control: AbstractControl) => {
+      let palabras=control.value.split(' ');
+      let band: Boolean = false;
+      for (let i = 0; i <= this.palabrasOB.length; i++) {
+        if (control.value == this.palabrasOB[i]) {
+          band = false;
+          break;
+        } else {
+          band = true;
+        }
+      }
+      if (band == true) {
+        console.log("no hay palabras malas")
+        console.log("Palabra Utilizada" + control.value);
 
+        return null;
 
+      } else  {
+        console.log("Cuida tu vocabulario");
+        
+      }//si pasa aca se muestra el mensaje
+        return { palabrasOb: true
+      }
 
+    }
 
-  //     let band: Boolean = false;
-  //     let fechasInvalidas = this.fechasRestringidas;
-  //     for (let i = 0; i <= fechasInvalidas.length; i++) {
-  //       if (control.value == fechasInvalidas[i]) {
-  //         this.fechaError = control.value;
-  //         band = false;
-  //         this.asientosc = 0;
-  //         break;
-  //       } else {
-  //         band = true;
-  //       }
-  //     }
-  //     if (band == true) {
-  //       console.log("no hubo error en")
-  //       console.log("Validacion cupollenoo:" + control.value);
-
-  //       return null;
-
-  //     } else  //si pasa aca se muestra el mensaje
-  //       return { cupollenoo: true }
-
-  //   }
-
-  // }
+  }
 }
