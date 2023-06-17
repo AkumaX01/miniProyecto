@@ -34,10 +34,9 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/quienes']);
         this.usuarioLogeado=this.correoObtenido;
         this.passwordUsuario=this.passwordObtenida;
-        console.log("entre perras")
         this.enviarCorreo();
       })
       .catch(error => console.log(error));
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginWithGoogle()
       .then(response => {
         console.log(response);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/quienes']);
       })
       .catch(error => console.log(error))
   }

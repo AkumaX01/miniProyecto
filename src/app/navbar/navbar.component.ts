@@ -46,6 +46,8 @@ export class NavbarComponent {
     });
   }
   onClickMe(){
+    this.router.navigate(['/quienes']);
+
     this.banderaLogeado=false;
     this.banderaLogeadoAdmin=false;
     this.userService.logout();
