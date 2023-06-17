@@ -31,6 +31,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
+import { GraficasComponent } from './graficas/graficas.component';
 
 
 //Las rutas simples
@@ -59,7 +61,9 @@ const appRoutes:Routes=[
     FormularioComponent,
     LoginComponent,
     LoginPhoneComponent,
-    RegisterComponent
+    RegisterComponent,
+    QrgenerateComponent,
+    GraficasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<!-- 
+<div>
+    <button (click)="generateQRCode()">Generar código QR</button>
+</div>
+-->
+<div>
+    <img *ngIf="qrcode" [src]="qrcode" alt="Código QR">
+</div>
