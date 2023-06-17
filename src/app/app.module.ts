@@ -44,9 +44,8 @@ const appRoutes:Routes=[
   {path:'formulario', component:FormularioComponent},
   {path:'login', component: LoginComponent},
   {path:'login-phone', component: LoginPhoneComponent},
-  {path:'register', component: RegisterComponent}
-
-
+  {path:'register', component: RegisterComponent},
+  {path:'qr', component: QrgenerateComponent},
 ];
 
 @NgModule({
