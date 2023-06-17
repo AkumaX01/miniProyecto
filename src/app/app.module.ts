@@ -24,6 +24,7 @@ import { CardModule } from 'primeng/card';
 import { MessagesModule } from 'primeng/messages';
 import { MostrarCitaComponent } from './mostrar-cita/mostrar-cita.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -44,7 +45,8 @@ const appRoutes:Routes=[
     PaginaCasaComponent,
     RegistroCitaComponent,
     MostrarCitaComponent,
-    FormularioComponent
+    FormularioComponent,
+    ScreenReaderComponent
   ],
   imports: [
     BrowserModule,
