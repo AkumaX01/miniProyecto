@@ -33,6 +33,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
+import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -62,6 +63,7 @@ const appRoutes:Routes=[
     LoginPhoneComponent,
     RegisterComponent,
     QrgenerateComponent
+    ScreenReaderComponent
   ],
   imports: [
     BrowserModule,
