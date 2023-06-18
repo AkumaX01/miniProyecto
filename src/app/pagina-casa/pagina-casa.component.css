@@ -8,8 +8,8 @@ body {
 
 
 .masonry {
-  max-width: 6000px;
-  /* max-width: 2000px; */
+  /* max-width: 6000px; */
+  max-width: 2000px;
   margin: 60px auto;
   padding: 20px;
   display: grid;
