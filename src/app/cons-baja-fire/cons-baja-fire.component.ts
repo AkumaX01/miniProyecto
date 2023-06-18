@@ -1,23 +1,21 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import Place from 'src/app/interface/place';
 import { PlacesService } from 'src/app/services/places.service';
 
 
 @Component({
-  selector: 'app-pagina-casa',
-  templateUrl: './pagina-casa.component.html',
-  styleUrls: ['./pagina-casa.component.css']
+  selector: 'app-cons-baja-fire',
+  templateUrl: './cons-baja-fire.component.html',
+  styleUrls: ['./cons-baja-fire.component.css']
 })
-export class PaginaCasaComponent {
+export class ConsBajaFireComponent {
 
-  @Output() argumentoEnviado = new EventEmitter<string>();
   places: Place[];
 
   constructor(
     private placesService: PlacesService
   ) {
     this.places = [{
-      id: " ",
       nombre: " ",
       fecha: new Date(),
       hora: " ",
@@ -29,13 +27,15 @@ export class PaginaCasaComponent {
     }];
   }
 
-  enviarArgumento(valor: string) {
-    this.argumentoEnviado.emit(valor);
-  }
-
   ngOnInit(): void {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places;
     })
   }
+
+  async onClickDelete(place: Place) {
+    const response = await this.placesService.deletePlace(place);
+    console.log(response);
+  }
+
 }

@@ -31,9 +31,15 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CommonModule, DatePipe } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
+import { GestionSitiosComponent } from './gestion-sitios/gestion-sitios.component';
+import { AltaFireComponent } from './alta-fire/alta-fire.component';
+import { ConsBajaFireComponent } from './cons-baja-fire/cons-baja-fire.component';
+import { ReservaComponent } from './reserva/reserva.component';
+import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
 
 //Las rutas simples
@@ -47,6 +53,11 @@ const appRoutes:Routes=[
   {path:'login-phone', component: LoginPhoneComponent},
   {path:'register', component: RegisterComponent},
   {path:'qr', component: QrgenerateComponent},
+  {path:'sitios', component: GestionSitiosComponent},
+  {path:'register', component: RegisterComponent},
+  {path:'reserva', component: ReservaComponent}
+
+
 ];
 
 @NgModule({
@@ -62,8 +73,12 @@ const appRoutes:Routes=[
     LoginComponent,
     LoginPhoneComponent,
     RegisterComponent,
-    QrgenerateComponent,
-    GraficasComponent
+    GraficasComponent,
+    GestionSitiosComponent,
+    AltaFireComponent,
+    ConsBajaFireComponent,
+    ReservaComponent,
+    QrgenerateComponent
   ],
   imports: [
     BrowserModule,
@@ -76,10 +91,13 @@ const appRoutes:Routes=[
     CascadeSelectModule,
     DropdownModule,
     RatingModule,
+    DatePipe,
+    CommonModule,
     CardModule,
     MessagesModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    NgChartsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -91,7 +109,7 @@ const appRoutes:Routes=[
     })
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
