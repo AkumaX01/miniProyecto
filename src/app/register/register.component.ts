@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       .then(response => {
         console.log(response);
         this.newPlace();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/quienes']);
       })
       .catch(error => console.log(error));
   }

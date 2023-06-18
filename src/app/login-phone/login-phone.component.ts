@@ -68,7 +68,7 @@ export class LoginPhoneComponent implements OnInit {
             confirmationResult.confirm(code).then( () => {
               window.close();
               this.newPlace();
-              this.router.navigate(['/main']);
+              this.router.navigate(['/quienes']);
             }).catch(function (error) {
               // User couldn't sign in (bad verification code?)
               console.error('Error while checking the verification code', error);
