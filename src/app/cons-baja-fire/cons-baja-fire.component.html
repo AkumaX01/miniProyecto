@@ -1,0 +1,17 @@
+<div class="card">
+    
+  </div>
+  <div class="places">
+    <div class="place" *ngFor="let place of places">
+        <img src="{{ place.imagen }}" alt="Imagen del sitio">
+        <div class="card-body">
+            <h5 class="card-title">{{ place.nombre }}</h5>
+            <p class="card-text">Fecha: {{ place.fecha}}</p>
+            <p class="card-text">Hora: {{ place.hora }}</p>
+            <p class="card-text">Aire acondicionado: {{ place.aire ? 'Sí' : 'No' }}</p>
+            <p class="card-text">Cuartos: {{ place.cuartos }}</p>
+            <p class="card-text">Categoría: {{ place.categoria }}</p>
+            <button class="btn btn-danger" (click)="onClickDelete(place)">Delete</button>
+        </div>
+    </div>
+</div>
