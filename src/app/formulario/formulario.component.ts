@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-formulario',
@@ -12,7 +13,7 @@ export class FormularioComponent implements OnInit {
   contactanos:any;
   mensaje:string="";
   palabrasOB:string[]=["gay","tonto","feo","puto"];
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder,private http: HttpClient) { 
     this.messages = [];
   }
 
@@ -22,6 +23,35 @@ export class FormularioComponent implements OnInit {
       this.messages = [
           { severity: 'success', summary: 'Enviado:', detail: 'Gracias por tu comentario, lo tomaremos en cuenta' },
       ];
+      const asunto = 'Contacto';
+  const correo = this.contactanos.email; // Reemplaza con la dirección de correo a la que se enviará el mensaje
+  const descripcion = `Nombre: ${this.contactanos.get('fname').value}
+  Apellido: ${this.contactanos.get('lname').value}
+  Correo: ${this.contactanos.get('email').value}
+  Telefono: ${this.contactanos.get('phone').value}
+  Mensaje: ${this.contactanos.get('message').value}`;
+
+  // Envía el correo al servidor Node.js
+  this.enviarCorreo(asunto, correo, descripcion);
+  }
+
+  enviarCorreo(asunto: string, correo: string, descripcion: string) {
+    const url = 'http://localhost:3000/enviar-correo/contacto'; 
+  
+    const data = {
+      asunto: asunto,
+      correo: this.contactanos.get('email').value,
+      descripcion: descripcion
+    };
+  
+    this.http.post(url, data).subscribe(
+      (response) => {
+        console.log('Correo enviado correctamente');
+      },
+      (error) => {
+        console.log('Error al enviar el correo:', error);
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -32,6 +62,14 @@ export class FormularioComponent implements OnInit {
       phone: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
       message: new FormControl('',[Validators.required,this.palabrasOb(this.mensaje)])
     });
+
+    this.contactanos = this.formBuilder.group({
+      fname: [''],
+      lname: [''],
+      email: [''],
+      phone: [''],
+      message: ['']
+    });
   }
   submit() {
     if (this.contactanos.valid) {
@@ -41,6 +79,17 @@ export class FormularioComponent implements OnInit {
     else{
       alert("Llena todos los campos")
     }
+    const formData = this.contactanos.value;
+  const firstName = formData.fname;
+  const lastName = formData.lname;
+  const email = formData.email;
+  const phone = formData.phone;
+  const message = formData.message;
+
+  // Realiza las acciones necesarias con los datos del formulario
+
+  // Limpia el formulario después de realizar las acciones
+  this.contactanos.reset();
   }
   palabrasOb(limit: string) {
     return (control: AbstractControl) => {
