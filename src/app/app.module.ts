@@ -41,7 +41,7 @@ import { GestionSitiosComponent } from './gestion-sitios/gestion-sitios.componen
 import { AltaFireComponent } from './alta-fire/alta-fire.component';
 import { ConsBajaFireComponent } from './cons-baja-fire/cons-baja-fire.component';
 import { ReservaComponent } from './reserva/reserva.component';
-import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
+
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -85,7 +85,7 @@ const appRoutes:Routes=[
     AltaFireComponent,
     ConsBajaFireComponent,
     ReservaComponent,
-    QrgenerateComponent
+    
     
   ],
   imports: [
