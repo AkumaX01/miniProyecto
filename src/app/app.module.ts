@@ -56,7 +56,7 @@ const appRoutes:Routes=[
   {path:'login', component: LoginComponent},
   {path:'sitios', component: GestionSitiosComponent},
   {path:'register', component: RegisterComponent},
-  {path:'reserva', component: ReservaComponent}
+  {path:'reserva', component: ReservaComponent},
   {path:'qr', component: QrgenerateComponent},
 
 ];
