@@ -34,6 +34,12 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 import { GraficasComponent } from './graficas/graficas.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
+import { GestionSitiosComponent } from './gestion-sitios/gestion-sitios.component';
+import { AltaFireComponent } from './alta-fire/alta-fire.component';
+import { ConsBajaFireComponent } from './cons-baja-fire/cons-baja-fire.component';
+import { ReservaComponent } from './reserva/reserva.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
@@ -48,9 +54,11 @@ const appRoutes:Routes=[
   {path:'tabla', component:MostrarCitaComponent},
   {path:'formulario', component:FormularioComponent},
   {path:'login', component: LoginComponent},
-  {path:'login-phone', component: LoginPhoneComponent},
+  {path:'sitios', component: GestionSitiosComponent},
   {path:'register', component: RegisterComponent},
+  {path:'reserva', component: ReservaComponent}
   {path:'qr', component: QrgenerateComponent},
+
 ];
 
 @NgModule({
@@ -69,7 +77,11 @@ const appRoutes:Routes=[
     QrgenerateComponent,
     ScreenReaderComponent,
     DomseguroPipe,
-    GraficasComponent
+    GraficasComponent,
+    GestionSitiosComponent,
+    AltaFireComponent,
+    ConsBajaFireComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -82,11 +94,14 @@ const appRoutes:Routes=[
     CascadeSelectModule,
     DropdownModule,
     RatingModule,
+    DatePipe,
+    CommonModule,
     CardModule,
     HttpClientModule,
     MessagesModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
+    NgChartsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -98,7 +113,7 @@ const appRoutes:Routes=[
     })
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

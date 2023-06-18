@@ -1,21 +1,28 @@
 {
-  "hosting": {
-    "public": "/dist/my-first-project",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   },
-  {
-    "target": "my-first-project",
-    "source": ".",
-    "frameworksBackend": {}
-  }
+  "hosting": [
+    {
+      "public": "public",
+
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "my-first-project",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
 }

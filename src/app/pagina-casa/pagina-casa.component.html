@@ -1,55 +1,16 @@
 <div class="masonry">
-    <div class="short">
-      <h3>Visita grandes ciudades</h3>
-      <p>Con nosotros te podras quedar en los edificios mas lujosos de Estados Unidos</p>
-    </div>
-    <div class="tall">
-        <img src="assets\img\casa4.jpg">
-    </div>
-    <div class="short">
-        <a href="/cita"><img src="assets\img\casa5.1.jpg"></a>
-    </div>
-    <div class="tall">
-        <img src="assets\img\casa1.jpg">
-    </div>
-    <div class="tall">
-        <img src="assets\img\casa2.jpg">
-    </div>
-    <div class="short">
-      <h3>Deja la comodidad de tu casa y sal a venturarte</h3>
-      <p>La vida es corta como para quedarte en el mismo lugar para siempre</p>
-    </div>
-    <div class="short">
-      <h3>Lugares hermosos</h3>
-      <p>Con nosotros podras quedarte en varias lugares, en todo el mundo</p>
-    </div>
-    <div class="tall">
-        <img src="assets\img\casa3.jpg">
-    </div>
-    <div class="short">
-      <h3>Diviertete en la comodidad de una casa</h3>
-      <p>Podras quedarte en casas en vez de estar en esos fastidiosos hoteles</p>
-    </div>
-    <div class="short">
-        <img src="assets\img\casa7.jpg">
-    </div>
-    <div class="tall">
-        <img src="assets\img\casa5.jpg">
-    </div>
-    <div class="short">
-        <img src="assets\img\casa6.jpeg">
-    </div>
-    <div class="short">
-        <h3>Diviertete</h3>
-        <p>La mejor diversion se consigue saliendo a nuevos lugares.</p>
-      </div>
-    
-    <div class="short">
-        <img src="assets\img\casa8.jpg">
-    </div>
-    <div class="short">
-        <img src="assets\img\casa9.jpg">
-    </div>
-    
+  <div *ngFor="let place of places; let i = index"
+  [ngClass]="i % 2 === 0 ? 'tall' : 'short'">
+<!-- Aquí va el contenido de la tarjeta --><div class="card-body">
+
+      <img src="{{ place.imagen }}" alt="Imagen del sitio" height="400px" width="400px">
+      <h5 class="card-title">{{ place.nombre }}</h5>
+      <a [routerLink]="['/reserva']" [queryParams]="{ parametro: place.id}">Enviar</a>
+      <p class="card-text">Categoría: {{ place.categoria }}</p>
+      <!-- Otros elementos de la tarjeta -->
+
+
   </div>
+    
+</div>
   

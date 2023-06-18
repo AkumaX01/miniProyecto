@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { CompartirUsuarioService } from '../compartir-usuario.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

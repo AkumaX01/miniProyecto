@@ -4,10 +4,10 @@
     "miniproject": "hosting-miniproject"
   },
   "targets": {
-    "autentucador-uaa": {
+    "hosting-miniproject": {
       "hosting": {
         "my-first-project": [
-          "avanceuaa"
+          "hosting-miniproject"
         ]
       }
     }
