@@ -1,0 +1,54 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Nombre:</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha:</label>
+        <input type="date" class="form-control" formControlName="fecha">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Hora:</label>
+        <input type="string" class="form-control" formControlName="hora">
+    </div>
+    <div class="mb-3">
+        <form action="">
+            <input type="checkbox" class="form-control" formControlName="aire">
+            <label class="form-label">Aire acondicionado: </label>
+
+        </form>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Cuartos </label>
+        <select name="cuartos" id="cuartos" class="form-control"  formControlName="cuartos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Categoria </label>
+        <select name="cate" id="cate" class="form-control"  formControlName="categoria">
+            <option value="Casa">Casa</option>
+            <option value="Departamento">Departamento</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Cabaña">Cabaña</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Imagen: </label>
+        <input type="text" class="form-control" formControlName="imagen" >
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-info">
+</form>
+
+<!--
+Nombre
+Fecha
+Hora
+Aire
+Cuartos
+Categoria
+Imagen-->
