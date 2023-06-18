@@ -6,5 +6,6 @@ export const environment = {
     apiKey: 'AIzaSyAqMU07BQljUb8brWQE6lebRlbI18B29w8',
     authDomain: 'hosting-miniproject.firebaseapp.com',
     messagingSenderId: '994857758418',
+
   },
 };

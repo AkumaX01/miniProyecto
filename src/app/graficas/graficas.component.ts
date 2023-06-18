@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-graficas',
@@ -44,5 +46,4 @@ export class GraficasComponent {
   }
 
 
-  
 }

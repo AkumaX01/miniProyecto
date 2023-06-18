@@ -48,7 +48,6 @@ const appRoutes:Routes=[
   {path:'tabla', component:MostrarCitaComponent},
   {path:'formulario', component:FormularioComponent},
   {path:'login', component: LoginComponent},
-  {path:'login-phone', component: LoginPhoneComponent},
   {path:'sitios', component: GestionSitiosComponent},
   {path:'register', component: RegisterComponent},
   {path:'reserva', component: ReservaComponent}
