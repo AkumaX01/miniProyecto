@@ -34,13 +34,14 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 import { GraficasComponent } from './graficas/graficas.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgChartsModule } from 'ng2-charts';
 import { GestionSitiosComponent } from './gestion-sitios/gestion-sitios.component';
 import { AltaFireComponent } from './alta-fire/alta-fire.component';
 import { ConsBajaFireComponent } from './cons-baja-fire/cons-baja-fire.component';
 import { ReservaComponent } from './reserva/reserva.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,10 +55,12 @@ const appRoutes:Routes=[
   {path:'tabla', component:MostrarCitaComponent},
   {path:'formulario', component:FormularioComponent},
   {path:'login', component: LoginComponent},
-  {path:'sitios', component: GestionSitiosComponent},
+  {path:'login-phone', component: LoginPhoneComponent},
   {path:'register', component: RegisterComponent},
-  {path:'reserva', component: ReservaComponent},
   {path:'qr', component: QrgenerateComponent},
+  {path:'sitios', component: GestionSitiosComponent},
+  {path:'reserva', component: ReservaComponent},
+  
 
 ];
 
@@ -81,7 +84,9 @@ const appRoutes:Routes=[
     GestionSitiosComponent,
     AltaFireComponent,
     ConsBajaFireComponent,
-    ReservaComponent
+    ReservaComponent,
+    QrgenerateComponent
+    
   ],
   imports: [
     BrowserModule,

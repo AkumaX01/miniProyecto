@@ -94,9 +94,11 @@ export class FormularioComponent implements OnInit {
   palabrasOb(limit: string) {
     return (control: AbstractControl) => {
       let palabras=control.value.split(' ');
+      console.log(palabras);
       let band: Boolean = false;
+      
       for (let i = 0; i <= this.palabrasOB.length; i++) {
-        if (control.value == this.palabrasOB[i]) {
+        if (control.value.includes(this.palabrasOB[i])) {
           band = false;
           break;
         } else {

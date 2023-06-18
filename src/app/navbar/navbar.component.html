@@ -24,11 +24,12 @@
         <li class="nav-item" *ngIf="banderaLogeado">
           <a class="nav-link" href="/quienes" (click)="onClickMe()"><pre>{{email}}/logout</pre></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/qr">QR</a>
+        </li>
 
         <li class="nav-item" *ngIf="!banderaLogeado">
           <a  class="nav-link" href="/login"><pre>login</pre></a>
         </li>
-        
-        
       </ul>
   </nav>
