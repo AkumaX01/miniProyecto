@@ -8,7 +8,6 @@ body {
 
 
 .masonry {
-  /* max-width: 6000px; */
   max-width: 2000px;
   margin: 60px auto;
   padding: 20px;
@@ -30,11 +29,9 @@ body {
 }
 .masonry .short {
   grid-row: span 2;
-  grid-column: 3;
 }
 .masonry .tall {
   grid-row: span 3;
-  grid-column: 2;
 }
 
   @media screen and (max-width: 2500px) {

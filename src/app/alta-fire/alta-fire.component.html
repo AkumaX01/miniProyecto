@@ -4,19 +4,11 @@
         <input type="text" class="form-control" formControlName="nombre">
     </div>
     <div class="mb-3">
-        <label class="form-label">Fecha:</label>
-        <input type="date" class="form-control" formControlName="fecha">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Hora:</label>
-        <input type="string" class="form-control" formControlName="hora">
-    </div>
-    <div class="mb-3">
-        <form action="">
-            <input type="checkbox" class="form-control" formControlName="aire">
             <label class="form-label">Aire acondicionado: </label>
-
-        </form>
+            <select name="aire" id="aire" class="form-control"  formControlName="aire">
+                <option value="1">Si</option>
+                <option value="2">No</option>
+            </select>
     </div>
     <div class="mb-3">
         <label class="form-label">Cuartos </label>

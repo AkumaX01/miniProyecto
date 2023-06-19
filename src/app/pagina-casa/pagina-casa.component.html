@@ -5,8 +5,8 @@
 
       <img src="{{ place.imagen }}" alt="Imagen del sitio" height="400px" width="400px">
       <h5 class="card-title">{{ place.nombre }}</h5>
-      <a [routerLink]="['/reserva']" [queryParams]="{ parametro: place.id}">Enviar</a>
       <p class="card-text">Categoría: {{ place.categoria }}</p>
+      <button class="btn btn-primary" (click)="redirectToPage(place.id)">Reservar</button>
       <!-- Otros elementos de la tarjeta -->
 
 

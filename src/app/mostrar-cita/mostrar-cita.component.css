@@ -1,0 +1,12 @@
+tr {
+    /* Estilos por defecto */
+    background: white;
+    color: black;
+  }
+  
+  tr:hover {
+    /* Estilos cuando el mouse está sobre el elemento */
+    background: rgb(98, 212, 254);
+    color: white;
+  }
+  

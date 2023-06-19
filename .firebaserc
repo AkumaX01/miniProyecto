@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "hosting-miniproject",
-    "miniproject": "hosting-miniproject"
+    "default": "hosting-miniproject"
   },
   "targets": {
     "hosting-miniproject": {

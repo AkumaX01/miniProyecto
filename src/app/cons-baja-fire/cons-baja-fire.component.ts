@@ -19,7 +19,7 @@ export class ConsBajaFireComponent {
       nombre: " ",
       fecha: new Date(),
       hora: " ",
-      aire: true,
+      aire: "true",
       cuartos: 4,
       categoria: "Depa",
       imagen: " ",
