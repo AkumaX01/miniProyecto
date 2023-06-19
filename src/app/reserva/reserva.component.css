@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+
+.producto-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Ajusta esto según tus necesidades */
+    width: 180vh;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+ }
+  
+  .producto-imagen {
+    width: 800px; /* Tamaño deseado para las imágenes */
+    height: 600px; /* Tamaño deseado para las imágenes */
+    object-fit: cover;
+  }
+  
+  
+  .producto-datos {
+    padding-left: 20px;
+  }
+  
+  .producto-datos p {
+    margin: 0;
+  }
+  
+  .producto-datos strong {
+    font-weight: bold;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #35dc99;
+    border-color: #35dc9c;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #35dc64;
+    border-color: #35dc59;
+  }

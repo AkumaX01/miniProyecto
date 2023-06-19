@@ -1,6 +1,7 @@
 
 <body>
    <!-- ======= Breadcrumbs ======= -->
+  
  <section id="breadcrumbs" class="breadcrumbs">
   <div class="container">
 
@@ -18,7 +19,16 @@
         <div class="row">
 
           <div class="col-lg-6 video-box align-self-baseline">
-            '<youtube-player hight="400px" videoId="RsrvO2CF-3s"></youtube-player>'
+            <iframe
+              width="560"
+              height="315"
+              [src]="videoYoutube | domseguro:'https://www.youtube.com/embed/' "
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+
+            <!-- '<youtube-player hight="400px" videoId="{{videoYoutube}}"></youtube-player>' -->
           </div>
 
           <div class="col-lg-6 pt-3 pt-lg-0 content" >

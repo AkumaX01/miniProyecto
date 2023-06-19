@@ -41,7 +41,7 @@
               <p-messages [(value)]="messages2" [enableService]="false" [closable]="false"></p-messages>
             </div>
 
-            <p>Fecha tecleada: {{fechaObtenida}}</p>
+            <p>Fecha tecleada: {{ fechaObtenida | date:'dd/MM/yyyy' }}</p>
             <h3>Apartar Fecha</h3>
             <ul>
               <li><strong>Categoria</strong>: Casa</li>

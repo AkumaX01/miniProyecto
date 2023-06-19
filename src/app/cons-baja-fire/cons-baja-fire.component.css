@@ -1,4 +1,4 @@
-.card {
+/*.card {
     display: flex;
     flex-direction: row;
     width: 300px;
@@ -37,4 +37,61 @@
   
   .btn-danger:hover {
     background-color: #c82333;
+  }
+  */
+  .card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .places {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .place {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+  }
+  
+  .place img {
+    width: auto;
+    height: 500px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .card-body {
+    flex: 1;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-text {
+    margin-bottom: 5px;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
   }

@@ -6,14 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" type="image/x-icon" href="assets\img\logo.png">
+
 </head>
 <body>
-    <app-qrgenerate></app-qrgenerate>
-    <app-navbar></app-navbar>
-    <app-alta-fire></app-alta-fire>
-    <app-cons-baja-fire></app-cons-baja-fire>
-    <router-outlet> </router-outlet>
-    <app-footer></app-footer>
+    
+    
+    
+    
+    
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto px-0">
+                <div id="sidebar" class="collapse collapse-horizontal show border-end">
+                    <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                        <app-screen-reader></app-screen-reader>
+                        
+                    </div>
+                </div>
+            </div>
+            <main class="col ps-md-2 pt-2">
+                <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-1 text-decoration-none">
+                    <img [src]="imagePath" alt="Accesibilidad" class="bi bi-list bi-lg py-2 p-1 sticky-image">
+                  </a>
+                  
+                <div id="screenReaderContent" tabindex="-1"  >
+                    <app-qrgenerate></app-qrgenerate>
+                    <app-navbar></app-navbar>
+                    
+                    <router-outlet> </router-outlet>
+                    <app-footer></app-footer>
+                 </div>
+            </main>
+        </div>
+    </div>
 
 </body>
 </html>

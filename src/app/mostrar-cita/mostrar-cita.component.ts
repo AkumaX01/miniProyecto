@@ -1,5 +1,7 @@
 import { Component,Input,OnInit } from '@angular/core';
 import { ActivatedRoute,Params} from '@angular/router';
+import Place from 'src/app/interface/place';
+import { PlacesService } from 'src/app/services/places.service';
   
 @Component({
   selector: 'app-mostrar-cita',
@@ -7,33 +9,32 @@ import { ActivatedRoute,Params} from '@angular/router';
   styleUrls: ['./mostrar-cita.component.css']
 })
 export class MostrarCitaComponent {
-  public fechaMostrar2: String[]=[];
-  @Input() public fechaArray2: String[]=[]; //Uso de input
+  places: Place[];
 
-  funCambiar(event: String[]){ //RECIBE OUTPUTttt
-   this.fechaMostrar=event; 
-
+  constructor(
+    private placesService: PlacesService
+  ) {
+    this.places = [{
+      nombre: " ",
+      fecha: new Date(),
+      hora: " ",
+      aire: "true",
+      cuartos: 4,
+      categoria: "Depa",
+      imagen: " ",
+      reserva: ["asd","asda"]
+    }];
   }
- 
-  fechaMostrar= JSON.parse(localStorage.getItem('fecha')!);
 
-  horaLocal= JSON.parse(localStorage.getItem('hora')!);
-
-  headers=["Fecha","Hora"];
-
-  constructor(private route: ActivatedRoute){
-    
-  }
-
-  
-  
-  Init(): void{
-    this.route.paramMap.subscribe(params =>{
-      const bandera= params.get('bandera');
+  ngOnInit(): void {
+    this.placesService.getPlaces().subscribe(places => {
+      this.places = places;
     })
   }
-  
-    
-  
-  
+  public hoverStyle = {
+    // Estilo cuando se aplica el efecto hover
+    background: 'red',
+    color: 'white'
+  };
+
 }

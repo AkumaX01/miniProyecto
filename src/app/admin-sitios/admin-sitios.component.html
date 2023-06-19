@@ -1,0 +1,13 @@
+<body>
+    <div class="container">
+      <button class="btn btn-danger" (click)="toggleForm()">{{buttonText}}</button>
+      <div *ngIf="showForm">
+        <app-alta-fire></app-alta-fire>
+      </div>
+  
+      <div>
+        <app-cons-baja-fire></app-cons-baja-fire>
+      </div>
+    </div>
+  </body>
+  

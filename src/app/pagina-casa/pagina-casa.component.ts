@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import Place from 'src/app/interface/place';
 import { PlacesService } from 'src/app/services/places.service';
 
@@ -14,14 +15,15 @@ export class PaginaCasaComponent {
   places: Place[];
 
   constructor(
-    private placesService: PlacesService
+    private placesService: PlacesService,
+    private router: Router
   ) {
     this.places = [{
       id: " ",
       nombre: " ",
       fecha: new Date(),
       hora: " ",
-      aire: true,
+      aire: "true",
       cuartos: 4,
       categoria: "Depa",
       imagen: " ",
@@ -37,5 +39,11 @@ export class PaginaCasaComponent {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places;
     })
+  }
+
+  redirectToPage(parametro) {
+
+    this.router.navigate(['/reserva'], { queryParams: { parametro: parametro } });
+  
   }
 }

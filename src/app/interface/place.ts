@@ -3,7 +3,7 @@ export default interface Place {
     nombre: string;
     fecha: Date;
     hora: string;
-    aire: boolean;
+    aire: string;
     cuartos: number;
     categoria: string;
     imagen: string;
