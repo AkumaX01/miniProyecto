@@ -1,0 +1,29 @@
+<body>
+    
+    <!--<div style="display: flex; align-items: center;">
+        <img src="{{places.imagen}}">
+        <div style="padding-left: 20px;">
+            <p><strong>Nombre:</strong> {{places.nombre}}</p>
+            <p><strong>Categoría:</strong> {{places.categoria}}</p>
+            <p><strong>Fecha: </strong></p>
+            <p-calendar [(ngModel)]="date" [showIcon]="true" [minDate]="minimumDate" [disabledDates]="arrayDeFechas" dateFormat="dd/mm/yy"></p-calendar>
+            <p><strong>Aire:</strong> {{places.aire}}</p>
+            <p><strong>Cuartos:</strong> {{places.cuartos}}</p>
+        </div>
+      </div>-->
+    
+    <div class="producto-container">
+        <img class="producto-imagen" src="{{places.imagen}}">
+        <div class="producto-datos">
+            <p><strong>Nombre:</strong> {{places.nombre}}</p>
+            <p><strong>Categoría:</strong> {{places.categoria}}</p>
+            <p><strong>Fecha: </strong></p>
+            <p><strong>Aire:</strong>{{ places.aire ? 'Sí' : 'No' }}</p>
+            <p><strong>Cuartos:</strong> {{places.cuartos}}</p>
+            <p-calendar [(ngModel)]="date" [showIcon]="true" [minDate]="minimumDate" [disabledDates]="arrayDeFechas" dateFormat="dd/mm/yy"></p-calendar>
+            <br><button class="btn btn-danger" (click)="update()" type="button" style="margin-top: 20px;">Reservar</button>
+        </div>
+    </div>
+    
+      
+    </body>

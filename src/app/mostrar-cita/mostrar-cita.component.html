@@ -1,19 +1,25 @@
+<app-graficas></app-graficas>
+<br><br><br><br><br><br><br>
+
 <table class="table">
     <thead>
       <tr >
-        <th  *ngFor="let column of headers " scope="col">
-            {{column}}
+        <th  scope="col">
+          Sitio
+        </th>
+        <th  scope="col">
+          Fecha de Reserva
         </th>
         
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let column of fechaMostrar let indice=index" [ngStyle]="{'background-color':indice%2==0?'#B6B3B2':'#E9E5E4'}">
+    <tbody *ngFor="let place of places let indice=index">
+      <tr *ngFor="let reservas of place.reserva let indice=index">
         <td >
-            {{column}}
+            {{place.nombre}}
         </td>
         <td >
-            {{horaLocal[indice]}}
+            {{place.reserva[indice]}}
         </td>
       </tr>
       

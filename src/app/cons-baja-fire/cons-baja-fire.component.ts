@@ -1,14 +1,15 @@
-import { Component,Input,OnInit } from '@angular/core';
-import { ActivatedRoute,Params} from '@angular/router';
+import { Component } from '@angular/core';
 import Place from 'src/app/interface/place';
 import { PlacesService } from 'src/app/services/places.service';
-  
+
+
 @Component({
-  selector: 'app-mostrar-cita',
-  templateUrl: './mostrar-cita.component.html',
-  styleUrls: ['./mostrar-cita.component.css']
+  selector: 'app-cons-baja-fire',
+  templateUrl: './cons-baja-fire.component.html',
+  styleUrls: ['./cons-baja-fire.component.css']
 })
-export class MostrarCitaComponent {
+export class ConsBajaFireComponent {
+
   places: Place[];
 
   constructor(
@@ -31,10 +32,10 @@ export class MostrarCitaComponent {
       this.places = places;
     })
   }
-  public hoverStyle = {
-    // Estilo cuando se aplica el efecto hover
-    background: 'red',
-    color: 'white'
-  };
+
+  async onClickDelete(place: Place) {
+    const response = await this.placesService.deletePlace(place);
+    console.log(response);
+  }
 
 }

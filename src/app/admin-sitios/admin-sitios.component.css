@@ -1,0 +1,26 @@
+
+  .container button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+.btn-danger {
+    color: #fff;
+    background-color: #3580dc;
+    border-color: #3596dc;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  .btn-danger:hover {
+    background-color: #2341c8;
+    border-color: #2133bd;
+  }

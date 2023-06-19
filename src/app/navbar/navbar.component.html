@@ -12,19 +12,25 @@
           <a class="nav-link" href="/quienes">Quienes somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/casas">Proximas casas en renta</a>
+          <a class="nav-link" href="/casas">Casas en renta</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cita">Rentar</a>
+        <li class="nav-item" *ngIf="banderaLogeadoAdmin">
+          <a class="nav-link" href="/tabla">Administrar Reservas</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/tabla">Registro</a>
+        <li class="nav-item" *ngIf="banderaLogeadoAdmin">
+          <a class="nav-link" href="/adminSitios">Administrar Sitios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/formulario">Contactanos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">log in</a>
+        <li class="nav-item" *ngIf="banderaLogeado">
+          <a class="nav-link" href="/quienes" (click)="onClickMe()"><pre>{{email}}/logout</pre></a>
         </li>
+
+        <li class="nav-item" *ngIf="!banderaLogeado">
+          <a  class="nav-link" href="/login"><pre>login</pre></a>
+        </li>
+        
+        
       </ul>
   </nav>

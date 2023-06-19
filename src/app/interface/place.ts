@@ -1,8 +1,23 @@
 export default interface Place {
     id?: string;
-    name: string;
-    desde: number;
-    hasta: number;
-    description: string;
-    sitio: string;
+    nombre: string;
+    fecha: Date;
+    hora: string;
+    aire: string;
+    cuartos: number;
+    categoria: string;
+    imagen: string;
+    reserva: string[];
 }
+
+
+/*<!--
+Nombre
+Fecha
+    <app-alta-fire></app-alta-fire>
+    <app-cons-baja-fire></app-cons-baja-fire>
+Hora
+Aire
+Cuartos
+Categoria
+Imagen-->*/
