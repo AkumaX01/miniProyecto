@@ -52,6 +52,7 @@ export class ReservaComponent {
   }
 
   ngOnInit(): void {
+    
     this.route.queryParams.subscribe(params => {
       this.parametro = params['parametro'];
     });
@@ -80,23 +81,34 @@ export class ReservaComponent {
       if (user) {
         
         this.email = user.email;
-        
+        console.log(this.email);
+    if (this.email==="") {
+      this.banderaLogeado=false;
+    }else {
+      this.banderaLogeado=true;
+    }
         //console.log('Email:', email);
       }
+      
     });
   }
 
   update(): void{
-    const fechaFormateada = this.datePipe.transform(this.date, 'yyyy-MM-dd');
+    
+    if(this.banderaLogeado==false){
+      this.router.navigate(['/login']);
+    }else{
+      const fechaFormateada = this.datePipe.transform(this.date, 'yyyy-MM-dd');
 
     this.placesService.editDoc(this.parametro, fechaFormateada);
 
     const descripcion = "Usted ha reservado en nuestra pagina en el sitio "+this.places.nombre+" en la fecha "+fechaFormateada;
 
-    this.enviarCorreo("Nueva Reservacion", this.email, descripcion)
+    this.enviarCorreo("Nueva Reservacion", this.email, descripcion);
+    }
   }
 
-
+  
   enviarCorreo(asunto: string, correo: string, descripcion: string) {
     const url = 'https://finalgina.fly.dev/enviar-correo'; 
   
