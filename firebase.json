@@ -1,11 +1,7 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "hosting": [
+  "hosting":
     {
-      "public": "public",
+      "public": "dist/my-first-project",
 
       "ignore": [
         "firebase.json",
@@ -18,11 +14,5 @@
           "destination": "/index.html"
         }
       ]
-    },
-    {
-      "target": "my-first-project",
-      "source": ".",
-      "frameworksBackend": {}
     }
-  ]
 }
