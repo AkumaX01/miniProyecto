@@ -3,6 +3,7 @@ import { Message } from 'primeng/api';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-formulario',
@@ -24,7 +25,7 @@ export class FormularioComponent implements OnInit {
           { severity: 'success', summary: 'Enviado:', detail: 'Gracias por tu comentario, lo tomaremos en cuenta' },
       ];
       const asunto = 'Contacto';
-  const correo = this.contactanos.email; // Reemplaza con la dirección de correo a la que se enviará el mensaje
+  const correo = "proyectoginaweb90@gmail.com"; // Reemplaza con la dirección de correo a la que se enviará el mensaje
   const descripcion = `Nombre: ${this.contactanos.get('fname').value}
   Apellido: ${this.contactanos.get('lname').value}
   Correo: ${this.contactanos.get('email').value}
@@ -33,14 +34,15 @@ export class FormularioComponent implements OnInit {
 
   // Envía el correo al servidor Node.js
   this.enviarCorreo(asunto, correo, descripcion);
+  Notiflix.Loading.remove();
   }
 
   enviarCorreo(asunto: string, correo: string, descripcion: string) {
-    const url = 'http://localhost:3000/enviar-correo/contacto'; 
+    const url = 'https://finalgina.fly.dev/enviar-correo/contacto'; 
   
     const data = {
       asunto: asunto,
-      correo: this.contactanos.get('email').value,
+      correo: correo,
       descripcion: descripcion
     };
   
@@ -63,15 +65,10 @@ export class FormularioComponent implements OnInit {
       message: new FormControl('',[Validators.required,this.palabrasOb(this.mensaje)])
     });
 
-    this.contactanos = this.formBuilder.group({
-      fname: [''],
-      lname: [''],
-      email: [''],
-      phone: [''],
-      message: ['']
-    });
+    
   }
   submit() {
+    Notiflix.Loading.circle("Mandando...");
     if (this.contactanos.valid) {
       console.log(this.contactanos.value)
       this.addMessages();
@@ -96,7 +93,7 @@ export class FormularioComponent implements OnInit {
       let palabras=control.value.split(' ');
       console.log(palabras);
       let band: Boolean = false;
-      
+
       for (let i = 0; i <= this.palabrasOB.length; i++) {
         if (control.value.includes(this.palabrasOB[i])) {
           band = false;
@@ -111,9 +108,9 @@ export class FormularioComponent implements OnInit {
 
         return null;
 
-      } else  {
+      } else  {
         console.log("Cuida tu vocabulario");
-        
+
       }//si pasa aca se muestra el mensaje
         return { palabrasOb: true
       }

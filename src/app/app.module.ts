@@ -42,16 +42,12 @@ import { ReservaComponent } from './reserva/reserva.component';
 import { AdminSitiosComponent } from './admin-sitios/admin-sitios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { CommonModule, DatePipe } from '@angular/common';
-import { NgChartsModule } from 'ng2-charts';
-import { GestionSitiosComponent } from './gestion-sitios/gestion-sitios.component';
-import { AltaFireComponent } from './alta-fire/alta-fire.component';
-import { ConsBajaFireComponent } from './cons-baja-fire/cons-baja-fire.component';
-import { ReservaComponent } from './reserva/reserva.component';
+
 
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 import { DomseguroPipe } from './domseguro.pipe';
+import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -95,7 +91,8 @@ const appRoutes:Routes=[
     AltaFireComponent,
     ConsBajaFireComponent,
     ReservaComponent,
-    AdminSitiosComponent
+    AdminSitiosComponent,
+    QrgenerateComponent
   ],
   imports: [
     BrowserModule,

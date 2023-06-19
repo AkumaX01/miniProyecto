@@ -97,7 +97,7 @@ export class ReservaComponent {
 
 
   enviarCorreo(asunto: string, correo: string, descripcion: string) {
-    const url = 'http://localhost:3000/enviar-correo'; 
+    const url = 'https://finalgina.fly.dev/enviar-correo'; 
   
     const data = {
       asunto: asunto,
