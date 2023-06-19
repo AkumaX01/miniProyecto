@@ -22,7 +22,7 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { CardModule } from 'primeng/card';
-import { MessagesModule } from 'primeng/messages';
+import { Messages, MessagesModule } from 'primeng/messages';
 import { MostrarCitaComponent } from './mostrar-cita/mostrar-cita.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { LoginComponent } from './login/login.component';
@@ -42,7 +42,7 @@ import { ReservaComponent } from './reserva/reserva.component';
 import { AdminSitiosComponent } from './admin-sitios/admin-sitios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import { Message } from 'primeng/api';
 
 
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';

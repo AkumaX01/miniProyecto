@@ -17,11 +17,15 @@
         <div class="producto-datos">
             <p><strong>Nombre:</strong> {{places.nombre}}</p>
             <p><strong>Categoría:</strong> {{places.categoria}}</p>
-            <p><strong>Fecha: </strong></p>
+            <!-- <p><strong>Fecha: {{ fech | date:'dd/MM/yyyy' }}</strong></p> -->
             <p><strong>Aire:</strong>{{ places.aire ? 'Sí' : 'No' }}</p>
             <p><strong>Cuartos:</strong> {{places.cuartos}}</p>
             <p-calendar [(ngModel)]="date" [showIcon]="true" [minDate]="minimumDate" [disabledDates]="arrayDeFechas" dateFormat="dd/mm/yy"></p-calendar>
             <br><button class="btn btn-danger" (click)="update()" type="button" style="margin-top: 20px;">Reservar</button>
+            <div *ngIf="banderaMensaje" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Reservacion Realizada!</strong> Has realizado tu reservacion con exito.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
         </div>
     </div>
     

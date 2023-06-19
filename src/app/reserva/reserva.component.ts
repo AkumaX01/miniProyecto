@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { Auth, authState, getAuth } from '@angular/fire/auth';
-
+import { Message } from 'primeng/api';
 
 
 @Component({
@@ -24,8 +24,9 @@ export class ReservaComponent {
   arrayDeFechas: Date[];
   email="";
   banderaLogeado=false;
-
+  messages: Message[];
   user$!: Observable<any>;
+  banderaMensaje=false;
 
   constructor(
     private placesService: PlacesService,
@@ -50,6 +51,12 @@ export class ReservaComponent {
   get userState$(){
     return authState(this.auth);
   }
+
+  addMessages() {
+    this.messages = [
+        { severity: 'success', summary: 'Reservado:', detail: 'El registro ha sido exitoso' },
+    ];
+}
 
   ngOnInit(): void {
     
@@ -105,6 +112,8 @@ export class ReservaComponent {
     const descripcion = "Usted ha reservado en nuestra pagina en el sitio "+this.places.nombre+" en la fecha "+fechaFormateada;
 
     this.enviarCorreo("Nueva Reservacion", this.email, descripcion);
+    this.addMessages();
+    this.banderaMensaje=true;
     }
   }
 
