@@ -10,7 +10,15 @@
         <th  scope="col">
           Fecha de Reserva
         </th>
-        
+        <th  scope="col">
+          Aire acondicionado
+        </th>
+        <th  scope="col">
+          Categoria
+        </th>
+        <th  scope="col">
+          Cuartos
+        </th>
       </tr>
     </thead>
     <tbody *ngFor="let place of places let indice=index">
@@ -20,6 +28,15 @@
         </td>
         <td >
             {{place.reserva[indice]}}
+        </td>
+        <td >
+          {{ place.aire ? 'Sí' : 'No' }}
+        </td>
+        <td >
+            {{place.categoria}}
+        </td>
+        <td >
+            {{place.cuartos}}
         </td>
       </tr>
       

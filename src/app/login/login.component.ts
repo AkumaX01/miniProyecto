@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/quienes']);
+        this.router.navigate(['/phone-login']);
         this.usuarioLogeado=this.correoObtenido;
         this.passwordUsuario=this.passwordObtenida;
         this.enviarCorreo();

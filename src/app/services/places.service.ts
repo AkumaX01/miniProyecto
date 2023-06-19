@@ -3,6 +3,7 @@ import { Firestore, collection, addDoc, collectionData, doc, deleteDoc, getDoc }
 import { Observable } from 'rxjs';
 import Place from '../interface/place'
 import Place2 from '../interface/place2';
+import Place3 from '../interface/place3';
 import { arrayUnion, getFirestore, updateDoc } from 'firebase/firestore';
 
 @Injectable({
@@ -14,6 +15,11 @@ export class PlacesService {
 
   addPlace(place: Place) {
     const placeRef = collection(this.firestore, 'Sitios');
+    return addDoc(placeRef, place);
+  }
+
+  addPlace3(place: Place3) {
+    const placeRef = collection(this.firestore, 'reserva');
     return addDoc(placeRef, place);
   }
 
@@ -32,6 +38,16 @@ export class PlacesService {
   getPlaces(): Observable<Place[]> {
     const placeRef = collection(this.firestore, 'Sitios');
     return collectionData(placeRef, { idField: 'id' }) as Observable<Place[]>;
+  }
+
+  getPlaces3(): Observable<Place3[]> {
+    const placeRef = collection(this.firestore, 'reserva');
+    return collectionData(placeRef, { idField: 'id' }) as Observable<Place3[]>;
+  }
+
+  deletePlace3(place: Place3) {
+    const placeDocRef = doc(this.firestore, `reserva/${place.id}`);
+    return deleteDoc(placeDocRef);
   }
 
   deletePlace(place: Place) {

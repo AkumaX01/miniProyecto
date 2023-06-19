@@ -16,8 +16,17 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Contraseña: </label>
-                            <input type="password" class="form-control" formControlName="password">
+                            <input type="password" class="form-control" formControlName="password" [(ngModel)]="pas2">
                         </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirmar Contraseña: </label>
+                            <input type="password" class="form-control" formControlName="Conpassword" [(ngModel)]="pas1">
+                        </div>
+                        <div *ngIf="band" class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Reservacion Realizada!</strong> Has realizado tu reservacion con exito.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
                         <input type="submit" class="btn btn-primary" value="Enviar">
                     </form><br>
                     <a href="/login">Ya tienes cuenta? Inicia sesion.</a>

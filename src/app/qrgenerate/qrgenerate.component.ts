@@ -33,7 +33,7 @@ export class QrgenerateComponent {
   }
 
   async qrcode12() {
-    const apiUrl = `http://localhost:3000/api/generar-codigo-qr`;
+    const apiUrl = `https://finalgina.fly.dev/api/generar-codigo-qr`;
     return axios.get<{ qrCodeUrl: string }>(apiUrl);
   }
 }

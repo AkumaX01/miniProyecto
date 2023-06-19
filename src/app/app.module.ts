@@ -48,6 +48,7 @@ import { Message } from 'primeng/api';
 import { ScreenReaderComponent } from './screen-reader/screen-reader.component';
 import { DomseguroPipe } from './domseguro.pipe';
 import { QrgenerateComponent } from './qrgenerate/qrgenerate.component';
+import { AdminreservasComponent } from './adminreservas/adminreservas.component';
 
 //Las rutas simples
 const appRoutes:Routes=[
@@ -57,12 +58,14 @@ const appRoutes:Routes=[
   {path:'tabla', component:MostrarCitaComponent},
   {path:'formulario', component:FormularioComponent},
   {path:'login', component: LoginComponent},
+  {path:'phone-login', component: LoginPhoneComponent},
   {path:'sitios', component: GestionSitiosComponent},
   {path:'register', component: RegisterComponent},
   {path:'qr', component: QrgenerateComponent},
 
   {path:'reserva', component: ReservaComponent},
-  {path:'adminSitios', component: AdminSitiosComponent}
+  {path:'adminSitios', component: AdminSitiosComponent},
+  {path:'adminuser', component: AdminreservasComponent}
   
 
 ];
@@ -92,7 +95,8 @@ const appRoutes:Routes=[
     ConsBajaFireComponent,
     ReservaComponent,
     AdminSitiosComponent,
-    QrgenerateComponent
+    QrgenerateComponent,
+    AdminreservasComponent
   ],
   imports: [
     BrowserModule,
