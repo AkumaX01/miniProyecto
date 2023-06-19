@@ -23,6 +23,7 @@ export class ReservaComponent {
   minimumDate: Date = new Date();
   arrayDeFechas: Date[];
   email="";
+  banderaLogeado=false;
 
   user$!: Observable<any>;
 
